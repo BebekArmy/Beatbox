@@ -157,8 +157,6 @@ void *Beatbox_startThread(void *arg) {
     (void)arg;
     while(!shutdown){
         BeatPattern* pattern = patternManager.pattern;
-        //print size
-        printf("Size: %d\n", patternManager.size);
         patternManager.changeRequested = false;
         int i = 0;
         while (i < patternManager.size && !patternManager.changeRequested) {
