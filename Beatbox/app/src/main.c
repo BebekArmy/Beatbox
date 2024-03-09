@@ -22,7 +22,6 @@ int main(void)
 	AudioMixer_init();
     Beatbox_init();
 
-    //make an infinite loop. depending on input change the pattern 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 if want to exit
     while(1)
     {
         int input;
