@@ -49,6 +49,7 @@ typedef struct {
 } BeatPattern;
 
 typedef struct {
+    int patternNumber;
     BeatPattern* pattern;
     bool changeRequested;
     int size;
@@ -104,6 +105,7 @@ static BeatPattern beatNumber2[] = {
 };
 
 static PatternManager patternManager = {
+    .patternNumber = 0,
     .pattern = beatNumber0,
     .changeRequested = false,
     .size = sizeof(beatNumber0) / sizeof(beatNumber0[0])
@@ -111,8 +113,35 @@ static PatternManager patternManager = {
 
 void *Beatbox_startThread(void *arg);
 
+void Beatbox_queueTestSound(int index) {
+
+    switch (index) {
+        case 0: AudioMixer_queueSound(&drumBdHard); break;
+        case 1: AudioMixer_queueSound(&drumSnareHard); break;
+        case 2: AudioMixer_queueSound(&drumSplashHard); break;
+    }
+}
+
 void Beatbox_changeBpm(int newBpm) {
     bpm = newBpm;
+}
+
+void Beatbox_incrementBpm() {
+    int newBpm = bpm + 5;
+    if (newBpm <= BEATBOX_MAX_BPM) {
+        bpm = newBpm;
+    }
+}
+
+void Beatbox_decrementBpm() {
+    int newBpm = bpm - 5;
+    if (newBpm >= BEATBOX_MIN_BPM) {
+        bpm = newBpm;
+    }
+}
+
+int Beatbox_getBpm() {
+    return bpm;
 }
 
 static double Beatbox_halfBeat(int bpm) {
@@ -136,24 +165,41 @@ void Beatbox_init() {
 void Beatbox_changePattern(int patternNumber) {
     switch (patternNumber) {
         case 0:
+            patternManager.patternNumber = 0;
             patternManager.pattern = beatNumber0;
             patternManager.size = sizeof(beatNumber0) / sizeof(beatNumber0[0]);
             break;
         case 1:
+                    patternManager.patternNumber = 1;
+
             patternManager.pattern = beatNumber1;
             patternManager.size = sizeof(beatNumber1) / sizeof(beatNumber1[0]);
             break;
         case 2:
+                    patternManager.patternNumber = 2;
+
             patternManager.pattern = beatNumber2;
             patternManager.size = sizeof(beatNumber2) / sizeof(beatNumber2[0]);
             break;
         default:
+                    patternManager.patternNumber = 0;
+
             patternManager.pattern = beatNumber0;
             patternManager.size = sizeof(beatNumber0) / sizeof(beatNumber0[0]);
             break;
     }
     patternManager.changeRequested = true;
 }
+
+int Beatbox_getPatternNumber() {
+    return patternManager.patternNumber;
+}
+
+void Beatbox_incrementPattern() {
+    Beatbox_changePattern((Beatbox_getPatternNumber() + 1) % 3);
+}
+
+
 void *Beatbox_startThread(void *arg) {
     (void)arg;
     while(!shutdown){

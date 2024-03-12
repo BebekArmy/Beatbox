@@ -8,6 +8,8 @@
 #include <limits.h>
 #include <alloca.h> // needed for mixer
 
+//#include "period_timer" ?
+
 
 static snd_pcm_t *handle;
 
@@ -257,6 +259,21 @@ void AudioMixer_setVolume(int newVolume)
     snd_mixer_close(volHandle);
 }
 
+void AudioMixer_incrementVolume() {
+	int newVolume = volume + 5;
+	if (newVolume <= AUDIOMIXER_MAX_VOLUME) {
+    	AudioMixer_setVolume(newVolume);
+	}
+	
+}
+
+void AudioMixer_decrementVolume() {
+	int newVolume = volume - 5;
+	if (newVolume >= AUDIOMIXER_MIN_VOLUME) {
+    	AudioMixer_setVolume(newVolume);
+	}
+}
+
 
 // Fill the `buff` array with new PCM values to output.
 //    `buff`: buffer to fill with new PCM data from sound bites.
@@ -307,6 +324,9 @@ static void fillPlaybackBuffer(short *buff, int size)
 	memset(buff, 0, size * sizeof(*buff));
 
 	pthread_mutex_lock(&audioMutex);
+
+	//Period_markEvent(PERIOD_EVENT_REFILL_AUDIO_PLAYBACK_BUFFER);
+
 	{
 		for (int i = 0; i < MAX_SOUND_BITES; i++) {
 			if (soundBites[i].pSound != NULL) {

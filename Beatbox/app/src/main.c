@@ -1,6 +1,9 @@
 #include "hal/audio_mixer.h"
 #include "hal/general_command.h"
 #include "hal/beatbox.h"
+#include "hal/gpio.h"
+#include "hal/joystick.h"
+#include "hal/accelerometer.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,43 +19,56 @@
 #define SAMPLE_SIZE   (sizeof(short))
 
 
-
 int main(void)
 {
-	AudioMixer_init();
-    Beatbox_init();
+	  AudioMixer_init();
+      Beatbox_init();
+    //   createJoystickThread();
 
-    while(1)
-    {
-        int input;
-        printf("Enter 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 to exit\n");
-        scanf("%d", &input);
-        if(input == 0)
-        {
-            Beatbox_changePattern(0);
-        }
-        else if(input == 1)
-        {
-            Beatbox_changePattern(1);
-        }
-        else if(input == 2)
-        {
-            Beatbox_changePattern(2);
-        }
-        else if(input == 3)
-        {
-            break;
-        }
+    initializeAccelerometer();
+    createAccelerometerThread();
+
+    // while(1)
+    // {
+    //     int input;
+    //     printf("Enter 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 to exit\n");
+    //     scanf("%d", &input);
+    //     if(input == 0)
+    //     {
+    //         Beatbox_changePattern(0);
+    //     }
+    //     else if(input == 1)
+    //     {
+    //         Beatbox_changePattern(1);
+    //     }
+    //     else if(input == 2)
+    //     {
+    //         Beatbox_changePattern(2);
+    //     }
+    //     else if(input == 3)
+    //     {
+    //         break;
+    //     }
+        
+    // }
+
+    while(1) {
+        printf("hello");
+        //Beatbox_queueTestSound(1);
+        sleepForMs(2000);
     }
 
+    
+    //sleep(20);
+    joinAccelerometerThread();
 
-    
-    
-    Beatbox_cleanup();
 
-    AudioMixer_cleanup();
+    // shutdownJoystick();
+    // joinJoystickThread();
+     Beatbox_cleanup();
+     AudioMixer_cleanup();
     
-    
+    //test_joystick();
     
 
     return 0;
