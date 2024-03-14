@@ -1,6 +1,7 @@
 #include "hal/audio_mixer.h"
 #include "hal/general_command.h"
 #include "hal/beatbox.h"
+#include "shutdown.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,40 +20,34 @@
 
 int main(void)
 {
-	AudioMixer_init();
-    Beatbox_init();
+    createThreads();
 
-    while(1)
-    {
-        int input;
-        printf("Enter 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 to exit\n");
-        scanf("%d", &input);
-        if(input == 0)
-        {
-            Beatbox_changePattern(0);
-        }
-        else if(input == 1)
-        {
-            Beatbox_changePattern(1);
-        }
-        else if(input == 2)
-        {
-            Beatbox_changePattern(2);
-        }
-        else if(input == 3)
-        {
-            break;
-        }
-    }
+    waitShutdown();
 
-
+    // while(1)
+    // {
+    //     int input;
+    //     printf("Enter 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 to exit\n");
+    //     scanf("%d", &input);
+    //     if(input == 0)
+    //     {
+    //         Beatbox_changePattern(0);
+    //     }
+    //     else if(input == 1)
+    //     {
+    //         Beatbox_changePattern(1);
+    //     }
+    //     else if(input == 2)
+    //     {
+    //         Beatbox_changePattern(2);
+    //     }
+    //     else if(input == 3)
+    //     {
+    //         break;
+    //     }
+    // }
     
-    
-    Beatbox_cleanup();
-
-    AudioMixer_cleanup();
-    
-    
+    joinThreads();
     
 
     return 0;

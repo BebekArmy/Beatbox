@@ -115,6 +115,14 @@ void Beatbox_changeBpm(int newBpm) {
     bpm = newBpm;
 }
 
+void Beatbox_BPMup() {
+    bpm += 5;
+}
+
+void Beatbox_BPMdown() {
+    bpm -= 5;
+}
+
 static double Beatbox_halfBeat(int bpm) {
     //Time For Half Beat [sec] = 60 [sec/min] /  BPM / 2 [half-beats per beat]
     //Calculate the time for a half beat in milliseconds

@@ -257,6 +257,16 @@ void AudioMixer_setVolume(int newVolume)
     snd_mixer_close(volHandle);
 }
 
+void AudioMixer_volumeUp()
+{
+	AudioMixer_setVolume(AudioMixer_getVolume() + 5);
+}
+
+void AudioMixer_volumeDown()
+{
+	AudioMixer_setVolume(AudioMixer_getVolume() - 5);
+}
+
 
 // Fill the `buff` array with new PCM values to output.
 //    `buff`: buffer to fill with new PCM data from sound bites.

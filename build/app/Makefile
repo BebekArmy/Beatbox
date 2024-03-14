@@ -171,6 +171,60 @@ src/main.c.s:
 	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/shutdown.o: src/shutdown.c.o
+
+.PHONY : src/shutdown.o
+
+# target to build an object file
+src/shutdown.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o
+.PHONY : src/shutdown.c.o
+
+src/shutdown.i: src/shutdown.c.i
+
+.PHONY : src/shutdown.i
+
+# target to preprocess a source file
+src/shutdown.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.i
+.PHONY : src/shutdown.c.i
+
+src/shutdown.s: src/shutdown.c.s
+
+.PHONY : src/shutdown.s
+
+# target to generate assembly for a file
+src/shutdown.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.s
+.PHONY : src/shutdown.c.s
+
+src/udp.o: src/udp.c.o
+
+.PHONY : src/udp.o
+
+# target to build an object file
+src/udp.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o
+.PHONY : src/udp.c.o
+
+src/udp.i: src/udp.c.i
+
+.PHONY : src/udp.i
+
+# target to preprocess a source file
+src/udp.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.i
+.PHONY : src/udp.c.i
+
+src/udp.s: src/udp.c.s
+
+.PHONY : src/udp.s
+
+# target to generate assembly for a file
+src/udp.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.s
+.PHONY : src/udp.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -183,6 +237,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/shutdown.o"
+	@echo "... src/shutdown.i"
+	@echo "... src/shutdown.s"
+	@echo "... src/udp.o"
+	@echo "... src/udp.i"
+	@echo "... src/udp.s"
 .PHONY : help
 
 

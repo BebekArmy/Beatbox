@@ -5,6 +5,8 @@
 
 
 void Beatbox_changeBpm(int newBpm);
+void Beatbox_BPMup();
+void Beatbox_BPMdown();
 void Beatbox_init();
 void Beatbox_changePattern(int patternNumber);
 void Beatbox_cleanup();

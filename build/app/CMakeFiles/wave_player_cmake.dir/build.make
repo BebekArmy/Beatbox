@@ -89,18 +89,48 @@ app/CMakeFiles/wave_player_cmake.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wave_player_cmake.dir/src/main.c.s"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/main.c" -o CMakeFiles/wave_player_cmake.dir/src/main.c.s
 
+app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o: app/CMakeFiles/wave_player_cmake.dir/flags.make
+app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/app/src/shutdown.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.c"
+
+app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wave_player_cmake.dir/src/shutdown.c.i"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.c" > CMakeFiles/wave_player_cmake.dir/src/shutdown.c.i
+
+app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wave_player_cmake.dir/src/shutdown.c.s"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.c" -o CMakeFiles/wave_player_cmake.dir/src/shutdown.c.s
+
+app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o: app/CMakeFiles/wave_player_cmake.dir/flags.make
+app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/app/src/udp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wave_player_cmake.dir/src/udp.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/udp.c"
+
+app/CMakeFiles/wave_player_cmake.dir/src/udp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wave_player_cmake.dir/src/udp.c.i"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/udp.c" > CMakeFiles/wave_player_cmake.dir/src/udp.c.i
+
+app/CMakeFiles/wave_player_cmake.dir/src/udp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wave_player_cmake.dir/src/udp.c.s"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/udp.c" -o CMakeFiles/wave_player_cmake.dir/src/udp.c.s
+
 # Object files for target wave_player_cmake
 wave_player_cmake_OBJECTS = \
-"CMakeFiles/wave_player_cmake.dir/src/main.c.o"
+"CMakeFiles/wave_player_cmake.dir/src/main.c.o" \
+"CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o" \
+"CMakeFiles/wave_player_cmake.dir/src/udp.c.o"
 
 # External object files for target wave_player_cmake
 wave_player_cmake_EXTERNAL_OBJECTS =
 
 app/wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/src/main.c.o
+app/wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o
+app/wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o
 app/wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/build.make
 app/wave_player_cmake: hal/libhal.a
 app/wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable wave_player_cmake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable wave_player_cmake"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wave_player_cmake.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying ARM executable to public NFS directory"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/app" && /usr/bin/cmake -E copy /home/felix/cmpt433/work/Assignment\ 3/build/app/wave_player_cmake ~/cmpt433/public/Assignment\ 3/wave_player_cmake

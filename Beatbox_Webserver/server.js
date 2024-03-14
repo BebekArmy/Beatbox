@@ -2,7 +2,7 @@ import http from 'http';
 import fs from 'fs';
 import mime from 'mime';
 import path from 'path';
-
+import { beagleboneServer } from './lib/beaglebone_server.js';
 
 // var http = require('http');
 var server = http.createServer(function(req, res) {
@@ -47,12 +47,11 @@ function send404(res) {
     res.end();
 }
 
-// var mime = import('mime');
+// var mime = require('mime');
 // var path = require('path');
 function sendFile(res, filePath, fileContents) {
     res.writeHead(200, {'Content-Type': mime.getType(path.basename(filePath)) || 'application/octet-stream'});
     res.end(fileContents);
 }
 
-var beagleboneServer = require('./lib/beaglebone_server');
-beagleboneServer.listen(server);
+beagleboneServer(server);
