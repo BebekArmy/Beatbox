@@ -53,5 +53,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "hal/CMakeFiles/hal.dir/DependInfo.cmake"
-  "app/CMakeFiles/wave_player_cmake.dir/DependInfo.cmake"
+  "app/CMakeFiles/wave_player.dir/DependInfo.cmake"
   )

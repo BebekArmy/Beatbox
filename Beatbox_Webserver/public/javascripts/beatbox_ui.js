@@ -1,4 +1,13 @@
 var socket = io.connect();
+var replyTimeoutDuration;
+
+function showErrorBox() {
+    replyTimeoutDuration = setTimeout(function() {
+        $('#error-box').show();
+    }, 100);
+}
+
+
 
 $(document).ready(function() {
     $('#modeNone').click(function() {
@@ -35,8 +44,36 @@ $(document).ready(function() {
         socket.emit('message', 'stop');
     });
 
-    socket.on('command', function(command) {
+    setInterval(function() {
+        socket.emit('message', 'info');
+        showErrorBox();
+    }, 100);
+
+
+    socket.on('commandReply', function(command) {
         console.log('Received command: ' + command);
+        $('#error-box').hide();
+        clearTimeout(replyTimeoutDuration);
+
+        var bpm = command.match(/BPM:(\d+)/)[1];
+        var volume = command.match(/Volume:(\d+)/)[1];
+        var pattern = command.match(/Pattern:(\d+)/)[1];
+        var uptime = command.match(/Hours: (\d+) Minutes: (\d+) Seconds: (\d+)/);
+        
+        bpmid.value = bpm;
+        volumeid.value = volume;
+        $('#modeid').text(pattern);
+        if (pattern == 0) {
+            $('#modeid').text("None");
+        }
+        else if (pattern == 1) {
+            $('#modeid').text("Rock 1");
+        }
+        else if (pattern == 2) {
+            $('#modeid').text("Rock 2");
+        }
+
+        $('#status').text(uptime[1] + ":" + uptime[2] + ":" + uptime[3] + " (H:M:S)");
     });
 });
 

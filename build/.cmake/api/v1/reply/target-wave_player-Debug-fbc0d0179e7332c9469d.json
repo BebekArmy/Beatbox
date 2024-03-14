@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "app/wave_player_cmake"
+			"path" : "app/wave_player"
 		}
 	],
 	"backtrace" : 1,
@@ -127,7 +127,7 @@
 			"id" : "hal::@ad971efe0e95b39e260f"
 		}
 	],
-	"id" : "wave_player_cmake::@5f5a17c01335469806cb",
+	"id" : "wave_player::@5f5a17c01335469806cb",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -157,8 +157,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "wave_player_cmake",
-	"nameOnDisk" : "wave_player_cmake",
+	"name" : "wave_player",
+	"nameOnDisk" : "wave_player",
 	"paths" : 
 	{
 		"build" : "app",

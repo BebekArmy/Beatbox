@@ -14,7 +14,7 @@ h1, h2 {
 
 #status-box {
 	float: right;
-	width: 250px;
+	width: 300px;
 	min-height: 200pt;
 	border: thin black solid;
 	background-color: #f3f3f3;
@@ -23,7 +23,7 @@ h1, h2 {
 }
 
 #left-box {
-	margin-right: 300px;	
+	margin-right: 360px;	
 	border: thin black solid;
 	padding-left: 10pt;
 	padding-right: 10pt;

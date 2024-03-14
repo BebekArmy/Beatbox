@@ -76,9 +76,9 @@
 				},
 				{
 					"directoryIndex" : 2,
-					"id" : "wave_player_cmake::@5f5a17c01335469806cb",
-					"jsonFile" : "target-wave_player_cmake-Debug-df4d5f3f70995a8c5db0.json",
-					"name" : "wave_player_cmake",
+					"id" : "wave_player::@5f5a17c01335469806cb",
+					"jsonFile" : "target-wave_player-Debug-fbc0d0179e7332c9469d.json",
+					"name" : "wave_player",
 					"projectIndex" : 0
 				}
 			]

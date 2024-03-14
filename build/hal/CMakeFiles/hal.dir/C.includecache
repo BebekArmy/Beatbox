@@ -68,20 +68,6 @@ pthread.h
 stdbool.h
 -
 
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/audio_mixer.c
-hal/audio_mixer.h
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/hal/audio_mixer.h
-alsa/asoundlib.h
--
-stdbool.h
--
-pthread.h
--
-limits.h
--
-alloca.h
--
-
 /home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/beatbox.c
 hal/beatbox.h
 /home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/hal/beatbox.h
@@ -97,38 +83,6 @@ stdbool.h
 -
 pthread.h
 -
-
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/general_command.c
-hal/general_command.h
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/hal/general_command.h
-time.h
--
-sys/time.h
--
-fcntl.h
--
-sys/ioctl.h
--
-linux/i2c-dev.h
--
-unistd.h
--
-stdio.h
--
-stdlib.h
--
-string.h
--
-pthread.h
--
-stdbool.h
--
-
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c
-hal/gpio.h
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/hal/gpio.h
-hal/general_command.h
-/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/hal/general_command.h
 
 /home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c
 hal/audio_mixer.h

@@ -130,19 +130,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-app/CMakeFiles/wave_player_cmake.dir/rule:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/wave_player_cmake.dir/rule
-.PHONY : app/CMakeFiles/wave_player_cmake.dir/rule
+app/CMakeFiles/wave_player.dir/rule:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/wave_player.dir/rule
+.PHONY : app/CMakeFiles/wave_player.dir/rule
 
 # Convenience name for target.
-wave_player_cmake: app/CMakeFiles/wave_player_cmake.dir/rule
+wave_player: app/CMakeFiles/wave_player.dir/rule
 
-.PHONY : wave_player_cmake
+.PHONY : wave_player
 
 # fast build rule for target.
-wave_player_cmake/fast:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/build
-.PHONY : wave_player_cmake/fast
+wave_player/fast:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/build
+.PHONY : wave_player/fast
 
 src/main.o: src/main.c.o
 
@@ -150,7 +150,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/main.c.o
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -159,7 +159,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/main.c.i
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -168,7 +168,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/main.c.s
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 src/period_timer.o: src/period_timer.c.o
@@ -177,7 +177,7 @@ src/period_timer.o: src/period_timer.c.o
 
 # target to build an object file
 src/period_timer.c.o:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.o
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/period_timer.c.o
 .PHONY : src/period_timer.c.o
 
 src/period_timer.i: src/period_timer.c.i
@@ -186,7 +186,7 @@ src/period_timer.i: src/period_timer.c.i
 
 # target to preprocess a source file
 src/period_timer.c.i:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.i
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/period_timer.c.i
 .PHONY : src/period_timer.c.i
 
 src/period_timer.s: src/period_timer.c.s
@@ -195,7 +195,7 @@ src/period_timer.s: src/period_timer.c.s
 
 # target to generate assembly for a file
 src/period_timer.c.s:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.s
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/period_timer.c.s
 .PHONY : src/period_timer.c.s
 
 src/print_result.o: src/print_result.c.o
@@ -204,7 +204,7 @@ src/print_result.o: src/print_result.c.o
 
 # target to build an object file
 src/print_result.c.o:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.o
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/print_result.c.o
 .PHONY : src/print_result.c.o
 
 src/print_result.i: src/print_result.c.i
@@ -213,7 +213,7 @@ src/print_result.i: src/print_result.c.i
 
 # target to preprocess a source file
 src/print_result.c.i:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.i
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/print_result.c.i
 .PHONY : src/print_result.c.i
 
 src/print_result.s: src/print_result.c.s
@@ -222,7 +222,7 @@ src/print_result.s: src/print_result.c.s
 
 # target to generate assembly for a file
 src/print_result.c.s:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.s
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/print_result.c.s
 .PHONY : src/print_result.c.s
 
 src/shutdown.o: src/shutdown.c.o
@@ -231,7 +231,7 @@ src/shutdown.o: src/shutdown.c.o
 
 # target to build an object file
 src/shutdown.c.o:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/shutdown.c.o
 .PHONY : src/shutdown.c.o
 
 src/shutdown.i: src/shutdown.c.i
@@ -240,7 +240,7 @@ src/shutdown.i: src/shutdown.c.i
 
 # target to preprocess a source file
 src/shutdown.c.i:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.i
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/shutdown.c.i
 .PHONY : src/shutdown.c.i
 
 src/shutdown.s: src/shutdown.c.s
@@ -249,7 +249,7 @@ src/shutdown.s: src/shutdown.c.s
 
 # target to generate assembly for a file
 src/shutdown.c.s:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.s
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/shutdown.c.s
 .PHONY : src/shutdown.c.s
 
 src/udp.o: src/udp.c.o
@@ -258,7 +258,7 @@ src/udp.o: src/udp.c.o
 
 # target to build an object file
 src/udp.c.o:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/udp.c.o
 .PHONY : src/udp.c.o
 
 src/udp.i: src/udp.c.i
@@ -267,7 +267,7 @@ src/udp.i: src/udp.c.i
 
 # target to preprocess a source file
 src/udp.c.i:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.i
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/udp.c.i
 .PHONY : src/udp.c.i
 
 src/udp.s: src/udp.c.s
@@ -276,7 +276,7 @@ src/udp.s: src/udp.c.s
 
 # target to generate assembly for a file
 src/udp.c.s:
-	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/udp.c.s
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/src/udp.c.s
 .PHONY : src/udp.c.s
 
 # Help Target
@@ -287,7 +287,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... wave_player_cmake"
+	@echo "... wave_player"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -11,9 +11,9 @@ void Beatbox_changeBpm(int newBpm);
 void Beatbox_incrementBpm();
 void Beatbox_decrementBpm();
 int Beatbox_getBpm();
+int Beatbox_getPatternNumber();
 void Beatbox_init();
 void Beatbox_changePattern(int patternNumber);
-int Beatbox_getPatternNumber();
 void Beatbox_incrementPattern();
 void Beatbox_cleanup();
 

@@ -116,9 +116,11 @@ void *Beatbox_startThread(void *arg);
 void Beatbox_queueTestSound(int index) {
 
     switch (index) {
-        case 0: AudioMixer_queueSound(&drumBdHard); break;
-        case 1: AudioMixer_queueSound(&drumSnareHard); break;
-        case 2: AudioMixer_queueSound(&drumSplashHard); break;
+        case 0: AudioMixer_queueSound(&drumBdHard); break; //bass
+        case 1: AudioMixer_queueSound(&drumSnareHard); break; //snare
+        case 2: AudioMixer_queueSound(&drumSplashHard); break; // splash
+        case 3: AudioMixer_queueSound(&drumCh); break; // hi-hat
+        default: break;
     }
 }
 

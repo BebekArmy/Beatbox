@@ -11,12 +11,14 @@
 #include <pthread.h>
 #include <stdbool.h>
 
+#define FILE_UPTIME "/proc/uptime"
 #define MSG_MAX_LEN 200000
 #define PORT 12345
 
 static pthread_t UDPThread;
-static char previousCommand[MSG_MAX_LEN];
 
+static double uptime = 0;
+static int hours, minutes, seconds;
 
 
 void *displayUDPcommands(void *args)
@@ -60,54 +62,86 @@ void *displayUDPcommands(void *args)
         // change mode to "mode_none"
         if (strncmp(messageRx, "mode_none", strlen("mode_none")) == 0)
         {
-            printf("Mode set to none\n");
             Beatbox_changePattern(0);
         }
         // change mode to "mode_one"
         else if (strncmp(messageRx, "mode_one", strlen("mode_one")) == 0)
         {
-            printf("Mode set to rock one\n");
             Beatbox_changePattern(1);
         }
         // change mode to "mode_two"
         else if (strncmp(messageRx, "mode_two", strlen("mode_two")) == 0)
         {
-            printf("Mode set to rock two\n");
             Beatbox_changePattern(2);
         }
     
         //make the volume go up by 5
         else if (strncmp(messageRx, "volume_up", strlen("volume_up")) == 0)
         {
-            printf("Volume up\n");
             AudioMixer_incrementVolume();
         }
         //make the volume go down by 5
         else if (strncmp(messageRx, "volume_down", strlen("volume_down")) == 0)
         {
-            printf("Volume down\n");
             AudioMixer_decrementVolume();
         }
 
         //make the BPM go up by 5
         else if (strncmp(messageRx, "bpm_up", strlen("bpm_up")) == 0)
         {
-            printf("BPM up\n");
             Beatbox_incrementBpm();
         }
         //make the BPM go down by 5
         else if (strncmp(messageRx, "bpm_down", strlen("bpm_down")) == 0)
         {
-            printf("BPM down\n");
             Beatbox_decrementBpm();
+        }
+
+        //command to queue a "hi_hat" sound
+        else if (strncmp(messageRx, "hi_hat", strlen("hi_hat")) == 0)
+        {
+            Beatbox_queueTestSound(3);
+        }
+        //command to queue a "snare" sound
+        else if (strncmp(messageRx, "snare", strlen("snare")) == 0)
+        {
+            Beatbox_queueTestSound(1);
+        }
+        //command to queue a "bass" sound
+        else if (strncmp(messageRx, "bass", strlen("bass")) == 0)
+        {
+            Beatbox_queueTestSound(0);
         }
         // command for stop
         else if (strncmp(messageRx, "stop", strlen("stop")) == 0)
         {
-            char messageTx[MSG_MAX_LEN];
-            sprintf(messageTx, "Program Terminating\n");
             signalShutdown();
             break;
+        }
+        //get information about the current state of the program
+        else if (strncmp(messageRx, "info", strlen("info")) == 0)
+        {
+            FILE *fp = fopen(FILE_UPTIME, "r");
+            if (fp == NULL)
+            {
+                perror("Error opening file");
+                return NULL;
+            }
+            if (fscanf(fp, "%lf", &uptime) < 1) {
+                fprintf(stderr, "Failed to read uptime from /proc/uptime\n");
+                fclose(fp);
+                return NULL;
+            }
+            fclose(fp);
+
+            hours = (int)uptime / 3600;
+            minutes = ((int)uptime % 3600) / 60;
+            seconds = (int)uptime % 60;
+            
+            char messageTx[MSG_MAX_LEN];
+            sprintf(messageTx, "BPM:%d\nVolume:%d\nPattern:%d\n Hours: %d Minutes: %d Seconds: %d\n", Beatbox_getBpm(), AudioMixer_getVolume(), Beatbox_getPatternNumber(), hours, minutes, seconds);
+            sin_len = sizeof(sinRemote);
+            sendto(socketDescriptor, messageTx, strlen(messageTx), 0, (struct sockaddr *)&sinRemote, sin_len);
         }
 
         // command for any other command
@@ -119,7 +153,6 @@ void *displayUDPcommands(void *args)
             sendto(socketDescriptor, messageTx, strlen(messageTx), 0, (struct sockaddr *)&sinRemote, sin_len);
         }
 
-        strcpy(previousCommand, messageRx);
     }
     close(socketDescriptor);
     return NULL;

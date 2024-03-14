@@ -143,17 +143,17 @@ hal/fast:
 .PHONY : hal/fast
 
 #=============================================================================
-# Target rules for targets named wave_player_cmake
+# Target rules for targets named wave_player
 
 # Build rule for target.
-wave_player_cmake: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wave_player_cmake
-.PHONY : wave_player_cmake
+wave_player: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wave_player
+.PHONY : wave_player
 
 # fast build rule for target.
-wave_player_cmake/fast:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/build
-.PHONY : wave_player_cmake/fast
+wave_player/fast:
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player.dir/build.make app/CMakeFiles/wave_player.dir/build
+.PHONY : wave_player/fast
 
 # Help Target
 help:
@@ -164,7 +164,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hal"
-	@echo "... wave_player_cmake"
+	@echo "... wave_player"
 .PHONY : help
 
 
