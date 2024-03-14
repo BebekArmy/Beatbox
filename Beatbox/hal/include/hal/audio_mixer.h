@@ -9,6 +9,7 @@ typedef struct {
 } wavedata_t;
 
 #define AUDIOMIXER_MAX_VOLUME 100
+#define AUDIOMIXER_MIN_VOLUME 0
 
 // init() must be called before any other functions,
 // cleanup() must be called last to stop playback threads and free memory.
@@ -31,5 +32,8 @@ int  AudioMixer_getVolume(void);
 void AudioMixer_volumeUp(void);
 void AudioMixer_volumeDown(void);
 void AudioMixer_setVolume(int newVolume);
+void AudioMixer_incrementVolume();
+void AudioMixer_decrementVolume();
+
 
 #endif

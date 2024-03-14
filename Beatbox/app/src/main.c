@@ -1,6 +1,9 @@
 #include "hal/audio_mixer.h"
 #include "hal/general_command.h"
 #include "hal/beatbox.h"
+#include "hal/gpio.h"
+#include "hal/joystick.h"
+#include "hal/accelerometer.h"
 #include "shutdown.h"
 
 #include <stdio.h>
@@ -15,7 +18,6 @@
 #define SAMPLE_RATE   44100
 #define NUM_CHANNELS  1
 #define SAMPLE_SIZE   (sizeof(short))
-
 
 
 int main(void)
