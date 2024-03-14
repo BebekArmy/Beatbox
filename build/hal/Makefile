@@ -144,6 +144,33 @@ hal/fast:
 	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/build
 .PHONY : hal/fast
 
+src/accelerometer.o: src/accelerometer.c.o
+
+.PHONY : src/accelerometer.o
+
+# target to build an object file
+src/accelerometer.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/accelerometer.c.o
+.PHONY : src/accelerometer.c.o
+
+src/accelerometer.i: src/accelerometer.c.i
+
+.PHONY : src/accelerometer.i
+
+# target to preprocess a source file
+src/accelerometer.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/accelerometer.c.i
+.PHONY : src/accelerometer.c.i
+
+src/accelerometer.s: src/accelerometer.c.s
+
+.PHONY : src/accelerometer.s
+
+# target to generate assembly for a file
+src/accelerometer.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/accelerometer.c.s
+.PHONY : src/accelerometer.c.s
+
 src/audio_mixer.o: src/audio_mixer.c.o
 
 .PHONY : src/audio_mixer.o
@@ -225,6 +252,60 @@ src/general_command.c.s:
 	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/general_command.c.s
 .PHONY : src/general_command.c.s
 
+src/gpio.o: src/gpio.c.o
+
+.PHONY : src/gpio.o
+
+# target to build an object file
+src/gpio.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/gpio.c.o
+.PHONY : src/gpio.c.o
+
+src/gpio.i: src/gpio.c.i
+
+.PHONY : src/gpio.i
+
+# target to preprocess a source file
+src/gpio.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/gpio.c.i
+.PHONY : src/gpio.c.i
+
+src/gpio.s: src/gpio.c.s
+
+.PHONY : src/gpio.s
+
+# target to generate assembly for a file
+src/gpio.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/gpio.c.s
+.PHONY : src/gpio.c.s
+
+src/joystick.o: src/joystick.c.o
+
+.PHONY : src/joystick.o
+
+# target to build an object file
+src/joystick.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.o
+.PHONY : src/joystick.c.o
+
+src/joystick.i: src/joystick.c.i
+
+.PHONY : src/joystick.i
+
+# target to preprocess a source file
+src/joystick.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.i
+.PHONY : src/joystick.c.i
+
+src/joystick.s: src/joystick.c.s
+
+.PHONY : src/joystick.s
+
+# target to generate assembly for a file
+src/joystick.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.s
+.PHONY : src/joystick.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,6 +315,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hal"
+	@echo "... src/accelerometer.o"
+	@echo "... src/accelerometer.i"
+	@echo "... src/accelerometer.s"
 	@echo "... src/audio_mixer.o"
 	@echo "... src/audio_mixer.i"
 	@echo "... src/audio_mixer.s"
@@ -243,6 +327,12 @@ help:
 	@echo "... src/general_command.o"
 	@echo "... src/general_command.i"
 	@echo "... src/general_command.s"
+	@echo "... src/gpio.o"
+	@echo "... src/gpio.i"
+	@echo "... src/gpio.s"
+	@echo "... src/joystick.o"
+	@echo "... src/joystick.i"
+	@echo "... src/joystick.s"
 .PHONY : help
 
 

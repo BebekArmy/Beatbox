@@ -76,9 +76,22 @@ include hal/CMakeFiles/hal.dir/progress.make
 # Include the compile flags for this target's objects.
 include hal/CMakeFiles/hal.dir/flags.make
 
+hal/CMakeFiles/hal.dir/src/accelerometer.c.o: hal/CMakeFiles/hal.dir/flags.make
+hal/CMakeFiles/hal.dir/src/accelerometer.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/accelerometer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/CMakeFiles/hal.dir/src/accelerometer.c.o"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/accelerometer.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c"
+
+hal/CMakeFiles/hal.dir/src/accelerometer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hal.dir/src/accelerometer.c.i"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c" > CMakeFiles/hal.dir/src/accelerometer.c.i
+
+hal/CMakeFiles/hal.dir/src/accelerometer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/accelerometer.c.s"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c" -o CMakeFiles/hal.dir/src/accelerometer.c.s
+
 hal/CMakeFiles/hal.dir/src/audio_mixer.c.o: hal/CMakeFiles/hal.dir/flags.make
 hal/CMakeFiles/hal.dir/src/audio_mixer.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/audio_mixer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/CMakeFiles/hal.dir/src/audio_mixer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/CMakeFiles/hal.dir/src/audio_mixer.c.o"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/audio_mixer.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/audio_mixer.c"
 
 hal/CMakeFiles/hal.dir/src/audio_mixer.c.i: cmake_force
@@ -91,7 +104,7 @@ hal/CMakeFiles/hal.dir/src/audio_mixer.c.s: cmake_force
 
 hal/CMakeFiles/hal.dir/src/beatbox.c.o: hal/CMakeFiles/hal.dir/flags.make
 hal/CMakeFiles/hal.dir/src/beatbox.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/beatbox.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/CMakeFiles/hal.dir/src/beatbox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/CMakeFiles/hal.dir/src/beatbox.c.o"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/beatbox.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/beatbox.c"
 
 hal/CMakeFiles/hal.dir/src/beatbox.c.i: cmake_force
@@ -104,7 +117,7 @@ hal/CMakeFiles/hal.dir/src/beatbox.c.s: cmake_force
 
 hal/CMakeFiles/hal.dir/src/general_command.c.o: hal/CMakeFiles/hal.dir/flags.make
 hal/CMakeFiles/hal.dir/src/general_command.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/general_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/CMakeFiles/hal.dir/src/general_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object hal/CMakeFiles/hal.dir/src/general_command.c.o"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/general_command.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/general_command.c"
 
 hal/CMakeFiles/hal.dir/src/general_command.c.i: cmake_force
@@ -115,21 +128,53 @@ hal/CMakeFiles/hal.dir/src/general_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/general_command.c.s"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/general_command.c" -o CMakeFiles/hal.dir/src/general_command.c.s
 
+hal/CMakeFiles/hal.dir/src/gpio.c.o: hal/CMakeFiles/hal.dir/flags.make
+hal/CMakeFiles/hal.dir/src/gpio.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/gpio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object hal/CMakeFiles/hal.dir/src/gpio.c.o"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/gpio.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c"
+
+hal/CMakeFiles/hal.dir/src/gpio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hal.dir/src/gpio.c.i"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c" > CMakeFiles/hal.dir/src/gpio.c.i
+
+hal/CMakeFiles/hal.dir/src/gpio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/gpio.c.s"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c" -o CMakeFiles/hal.dir/src/gpio.c.s
+
+hal/CMakeFiles/hal.dir/src/joystick.c.o: hal/CMakeFiles/hal.dir/flags.make
+hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/felix/cmpt433/work/Assignment\ 3/Beatbox/hal/src/joystick.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object hal/CMakeFiles/hal.dir/src/joystick.c.o"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hal.dir/src/joystick.c.o -c "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c"
+
+hal/CMakeFiles/hal.dir/src/joystick.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hal.dir/src/joystick.c.i"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c" > CMakeFiles/hal.dir/src/joystick.c.i
+
+hal/CMakeFiles/hal.dir/src/joystick.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/joystick.c.s"
+	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c" -o CMakeFiles/hal.dir/src/joystick.c.s
+
 # Object files for target hal
 hal_OBJECTS = \
+"CMakeFiles/hal.dir/src/accelerometer.c.o" \
 "CMakeFiles/hal.dir/src/audio_mixer.c.o" \
 "CMakeFiles/hal.dir/src/beatbox.c.o" \
-"CMakeFiles/hal.dir/src/general_command.c.o"
+"CMakeFiles/hal.dir/src/general_command.c.o" \
+"CMakeFiles/hal.dir/src/gpio.c.o" \
+"CMakeFiles/hal.dir/src/joystick.c.o"
 
 # External object files for target hal
 hal_EXTERNAL_OBJECTS =
 
+hal/libhal.a: hal/CMakeFiles/hal.dir/src/accelerometer.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/src/audio_mixer.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/src/beatbox.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/src/general_command.c.o
+hal/libhal.a: hal/CMakeFiles/hal.dir/src/gpio.c.o
+hal/libhal.a: hal/CMakeFiles/hal.dir/src/joystick.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/build.make
 hal/libhal.a: hal/CMakeFiles/hal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libhal.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/felix/cmpt433/work/Assignment 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library libhal.a"
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && $(CMAKE_COMMAND) -P CMakeFiles/hal.dir/cmake_clean_target.cmake
 	cd "/home/felix/cmpt433/work/Assignment 3/build/hal" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal.dir/link.txt --verbose=$(VERBOSE)
 

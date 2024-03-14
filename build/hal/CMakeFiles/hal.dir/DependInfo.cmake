@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/accelerometer.c.o"
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/audio_mixer.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/audio_mixer.c.o"
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/beatbox.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/beatbox.c.o"
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/general_command.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/general_command.c.o"
+  "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/gpio.c.o"
+  "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c" "/home/felix/cmpt433/work/Assignment 3/build/hal/CMakeFiles/hal.dir/src/joystick.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

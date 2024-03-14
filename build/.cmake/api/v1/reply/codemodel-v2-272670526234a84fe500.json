@@ -70,14 +70,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "hal::@ad971efe0e95b39e260f",
-					"jsonFile" : "target-hal-Debug-ad75a4a2fb44ada25de7.json",
+					"jsonFile" : "target-hal-Debug-260fff022e955c5c2b5c.json",
 					"name" : "hal",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "wave_player_cmake::@5f5a17c01335469806cb",
-					"jsonFile" : "target-wave_player_cmake-Debug-1fbb3957d810c6abd3c3.json",
+					"jsonFile" : "target-wave_player_cmake-Debug-df4d5f3f70995a8c5db0.json",
 					"name" : "wave_player_cmake",
 					"projectIndex" : 0
 				}

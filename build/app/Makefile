@@ -171,6 +171,60 @@ src/main.c.s:
 	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/period_timer.o: src/period_timer.c.o
+
+.PHONY : src/period_timer.o
+
+# target to build an object file
+src/period_timer.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.o
+.PHONY : src/period_timer.c.o
+
+src/period_timer.i: src/period_timer.c.i
+
+.PHONY : src/period_timer.i
+
+# target to preprocess a source file
+src/period_timer.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.i
+.PHONY : src/period_timer.c.i
+
+src/period_timer.s: src/period_timer.c.s
+
+.PHONY : src/period_timer.s
+
+# target to generate assembly for a file
+src/period_timer.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.s
+.PHONY : src/period_timer.c.s
+
+src/print_result.o: src/print_result.c.o
+
+.PHONY : src/print_result.o
+
+# target to build an object file
+src/print_result.c.o:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.o
+.PHONY : src/print_result.c.o
+
+src/print_result.i: src/print_result.c.i
+
+.PHONY : src/print_result.i
+
+# target to preprocess a source file
+src/print_result.c.i:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.i
+.PHONY : src/print_result.c.i
+
+src/print_result.s: src/print_result.c.s
+
+.PHONY : src/print_result.s
+
+# target to generate assembly for a file
+src/print_result.c.s:
+	cd "/home/felix/cmpt433/work/Assignment 3/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/wave_player_cmake.dir/build.make app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.s
+.PHONY : src/print_result.c.s
+
 src/shutdown.o: src/shutdown.c.o
 
 .PHONY : src/shutdown.o
@@ -237,6 +291,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/period_timer.o"
+	@echo "... src/period_timer.i"
+	@echo "... src/period_timer.s"
+	@echo "... src/print_result.o"
+	@echo "... src/print_result.i"
+	@echo "... src/print_result.s"
 	@echo "... src/shutdown.o"
 	@echo "... src/shutdown.i"
 	@echo "... src/shutdown.s"

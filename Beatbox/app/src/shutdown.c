@@ -1,5 +1,8 @@
 #include "hal/beatbox.h"
 #include "hal/audio_mixer.h"
+#include "hal/gpio.h"
+#include "hal/joystick.h"
+#include "hal/accelerometer.h"
 #include "udp.h"
 
 #include <pthread.h>
@@ -15,6 +18,7 @@ void createThreads()
     AudioMixer_init();
     Beatbox_init();
     createUDPThread();
+    
 }
 
 void joinThreads()

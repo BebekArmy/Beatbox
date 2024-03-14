@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/wave_player_cmake.dir/src/main.c.o"
+  "CMakeFiles/wave_player_cmake.dir/src/period_timer.c.o"
+  "CMakeFiles/wave_player_cmake.dir/src/print_result.c.o"
   "CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o"
   "CMakeFiles/wave_player_cmake.dir/src/udp.c.o"
   "wave_player_cmake"

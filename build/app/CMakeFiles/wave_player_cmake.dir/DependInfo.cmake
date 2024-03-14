@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/main.c" "/home/felix/cmpt433/work/Assignment 3/build/app/CMakeFiles/wave_player_cmake.dir/src/main.c.o"
+  "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/period_timer.c" "/home/felix/cmpt433/work/Assignment 3/build/app/CMakeFiles/wave_player_cmake.dir/src/period_timer.c.o"
+  "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/print_result.c" "/home/felix/cmpt433/work/Assignment 3/build/app/CMakeFiles/wave_player_cmake.dir/src/print_result.c.o"
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.c" "/home/felix/cmpt433/work/Assignment 3/build/app/CMakeFiles/wave_player_cmake.dir/src/shutdown.c.o"
   "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/udp.c" "/home/felix/cmpt433/work/Assignment 3/build/app/CMakeFiles/wave_player_cmake.dir/src/udp.c.o"
   )

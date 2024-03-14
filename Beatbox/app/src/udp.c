@@ -80,26 +80,26 @@ void *displayUDPcommands(void *args)
         else if (strncmp(messageRx, "volume_up", strlen("volume_up")) == 0)
         {
             printf("Volume up\n");
-            AudioMixer_volumeUp();
+            AudioMixer_incrementVolume();
         }
         //make the volume go down by 5
         else if (strncmp(messageRx, "volume_down", strlen("volume_down")) == 0)
         {
             printf("Volume down\n");
-            AudioMixer_volumeDown();
+            AudioMixer_decrementVolume();
         }
 
         //make the BPM go up by 5
         else if (strncmp(messageRx, "bpm_up", strlen("bpm_up")) == 0)
         {
             printf("BPM up\n");
-            Beatbox_BPMup();
+            Beatbox_incrementBpm();
         }
         //make the BPM go down by 5
         else if (strncmp(messageRx, "bpm_down", strlen("bpm_down")) == 0)
         {
             printf("BPM down\n");
-            Beatbox_BPMdown();
+            Beatbox_decrementBpm();
         }
         // command for stop
         else if (strncmp(messageRx, "stop", strlen("stop")) == 0)

@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/felix/cmpt433/work/Assignment 3/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/hal/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/hal.dir/src/accelerometer.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c\"",
+  "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/accelerometer.c"
+},
+{
+  "directory": "/home/felix/cmpt433/work/Assignment 3/build/hal",
   "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/hal/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/hal.dir/src/audio_mixer.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/audio_mixer.c\"",
   "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/audio_mixer.c"
 },
@@ -15,9 +20,29 @@
   "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/general_command.c"
 },
 {
+  "directory": "/home/felix/cmpt433/work/Assignment 3/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/hal/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/hal.dir/src/gpio.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c\"",
+  "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/gpio.c"
+},
+{
+  "directory": "/home/felix/cmpt433/work/Assignment 3/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/hal/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/hal.dir/src/joystick.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c\"",
+  "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/src/joystick.c"
+},
+{
   "directory": "/home/felix/cmpt433/work/Assignment 3/build/app",
   "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/wave_player_cmake.dir/src/main.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/main.c\"",
   "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/main.c"
+},
+{
+  "directory": "/home/felix/cmpt433/work/Assignment 3/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/wave_player_cmake.dir/src/period_timer.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/period_timer.c\"",
+  "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/period_timer.c"
+},
+{
+  "directory": "/home/felix/cmpt433/work/Assignment 3/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include\" -I\"/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include\" -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -std=gnu11 -o CMakeFiles/wave_player_cmake.dir/src/print_result.c.o -c \"/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/print_result.c\"",
+  "file": "/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/print_result.c"
 },
 {
   "directory": "/home/felix/cmpt433/work/Assignment 3/build/app",
