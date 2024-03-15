@@ -22,7 +22,7 @@ void createThreads()
     initializeAccelerometer();
     createAccelerometerThread();
 
-    initializeJoystick();
+    //initializeJoystick();
     createJoystickThread();
 
     

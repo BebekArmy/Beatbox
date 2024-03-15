@@ -24,7 +24,7 @@ int main(void)
 {
     AudioMixer_init();
     Beatbox_init();
-    initializeJoystick();
+    //initializeJoystick();
     createJoystickThread();
     //createThreads();
 

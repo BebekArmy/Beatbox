@@ -11,20 +11,16 @@ void config_pin_to_gpio(const char *gpio_pin)
     runCommand(configPinCommand);
 }
 
-bool is_gpio_exported(const char *path)
-{
-    char filepath[256];
-    snprintf(filepath, sizeof(path), "%s", path);
+bool is_gpio_exported(const char *gpio_num) {
+    char path[256];
+    snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s", gpio_num);
 
-    FILE *file = fopen(filepath, "r");
-    if (file != NULL)
-    {
+    FILE *file = fopen(path, "r");
+    if (file != NULL) {
         fclose(file);
-        return true; // Directory exists, GPIO is exported
-    }
-    else
-    {
-        return false; // Directory does not exist, GPIO is not exported
+        return true;  // Directory exists, GPIO is exported
+    } else {
+        return false;  // Directory does not exist, GPIO is not exported
     }
 }
 
