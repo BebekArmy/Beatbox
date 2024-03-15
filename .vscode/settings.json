@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "/home/felix/cmpt433/work/Assignment 3/Beatbox"
+    "cmake.sourceDirectory": "/home/felix/cmpt433/work/Assignment 3/Beatbox",
+    "files.associations": {
+        "limits.h": "c"
+    }
 }
