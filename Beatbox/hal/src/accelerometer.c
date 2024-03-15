@@ -154,7 +154,7 @@ void *updateAccelerometerReading(void *args)
 
         sleepForMs(5);
 
-        Period_markEvent(PERIOD_EVENT_SAMPLE_ACCELEROMETER);
+        //Period_markEvent(PERIOD_EVENT_SAMPLE_ACCELEROMETER);
     }
 
     close(i2cFileDesc);

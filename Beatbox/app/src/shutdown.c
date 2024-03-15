@@ -20,8 +20,11 @@ void createThreads()
     createUDPThread();
 
     initializeAccelerometer();
-
     createAccelerometerThread();
+
+    initializeJoystick();
+    createJoystickThread();
+
     
 }
 
@@ -33,6 +36,9 @@ void joinThreads()
 
     shutdownAccelerometer();
     joinAccelerometerThread();
+
+    shutdownJoystick();
+    joinJoystickThread();
 
 }
 

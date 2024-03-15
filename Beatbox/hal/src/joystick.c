@@ -67,7 +67,7 @@ enum JoystickDirection get_joystick_direction()
 // Initialize: config five joystick pins to be used as gpio
 void initialize_joystick_config_pin()
 {
-    const char *gpio_pins[] = {JOYSTICK_LEFT_PIN, JOYSTICK_RIGHT_PIN, JOYSTICK_DOWN_PIN, JOYSTICK_LEFT_PIN};
+    const char *gpio_pins[] = {JOYSTICK_LEFT_PIN, JOYSTICK_RIGHT_PIN, JOYSTICK_DOWN_PIN, JOYSTICK_LEFT_PIN, JOYSTICK_CLICK_PIN};
 
     for (int i = 0; i < NUM_JOYSTICK_DIRECTIONS; ++i)
     {
