@@ -4,6 +4,8 @@
 #include "hal/joystick.h"
 #include "hal/accelerometer.h"
 #include "udp.h"
+#include "print_result.h"
+#include "period_timer.h"
 
 #include <pthread.h>
 #include <string.h>
@@ -15,6 +17,8 @@ pthread_cond_t shutdownCond = PTHREAD_COND_INITIALIZER;
 
 void createThreads()
 {
+    Period_init();
+
     AudioMixer_init();
     Beatbox_init();
     createUDPThread();
@@ -22,23 +26,29 @@ void createThreads()
     initializeAccelerometer();
     createAccelerometerThread();
 
-    //initializeJoystick();
+    initializeJoystick();
     createJoystickThread();
 
-    
+    createPrintingThread();
 }
 
 void joinThreads()
 {
-    joinUDPThread();
-    Beatbox_cleanup();
-    AudioMixer_cleanup();
-
+   
     shutdownAccelerometer();
     joinAccelerometerThread();
 
     shutdownJoystick();
     joinJoystickThread();
+
+    shutdownPrintingThread();
+    joinPrintingThread();
+
+    joinUDPThread();
+    Beatbox_cleanup();
+    AudioMixer_cleanup();
+
+    Period_cleanup();
 
 }
 

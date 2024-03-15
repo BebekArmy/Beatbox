@@ -14,7 +14,7 @@ enum JoystickDirection {
     CLICK
 };
 
-//void initializeJoystick();
+void initializeJoystick();
 void createJoystickThread();
 void shutdownJoystick();
 void joinJoystickThread();
