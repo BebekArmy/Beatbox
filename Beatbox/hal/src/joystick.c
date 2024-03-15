@@ -29,8 +29,6 @@
 #define JOYSTICK_LEFT_PIN "p8.18"
 #define JOYSTICK_CLICK_PIN "p8.17"
 
-#define NUM_JOYSTICKS 5
-
 static bool shutdown = false;
 static int joystickReading = 0;
 static pthread_t joystickThread;
@@ -108,7 +106,7 @@ void initializeJoystick()
     initialize_joystick_gpio_direction();
 }
 
-const char *joystickFiles[NUM_JOYSTICKS] = {
+const char *joystickFiles[NUM_JOYSTICK_DIRECTIONS] = {
     JOYSTICK_UP,
     JOYSTICK_RIGHT,
     JOYSTICK_DOWN,
@@ -132,10 +130,7 @@ void *updateJoystickReading(void *args)
             // Reset the hold counter if the direction changes
             holdCounter = 1;
         }
-        // else {
-        //     // Increment the hold counter if the direction remains the same
-        //     holdCounter++;
-        // }
+
         while (direction == UP)
         {
             direction = get_joystick_direction();
@@ -145,7 +140,6 @@ void *updateJoystickReading(void *args)
 
                 AudioMixer_incrementVolume();
                 joystickReading = 1;
-                printf("Joystick Direction: UP\n");
 
                 sleep(0.75);
                 initialDelay = false;
@@ -153,8 +147,6 @@ void *updateJoystickReading(void *args)
             if (holdCounter % 40 == 0)
             {
                 AudioMixer_incrementVolume();
-
-                printf("Joystick Direction: UP\n");
             }
             holdCounter++;
 
@@ -169,7 +161,6 @@ void *updateJoystickReading(void *args)
             {
                 Beatbox_incrementBpm();
                 joystickReading = 2;
-                printf("Joystick Direction: RIGHT\n");
 
                 sleep(0.75);
                 initialDelay = false;
@@ -177,8 +168,6 @@ void *updateJoystickReading(void *args)
             if (holdCounter % 15 == 0)
             {
                 Beatbox_incrementBpm();
-
-                printf("Joystick Direction: RIGHT\n");
             }
             holdCounter++;
 
@@ -194,7 +183,6 @@ void *updateJoystickReading(void *args)
                 AudioMixer_decrementVolume();
 
                 joystickReading = 3;
-                printf("Joystick Direction: DOWN\n");
 
                 sleep(0.75);
                 initialDelay = false;
@@ -202,8 +190,6 @@ void *updateJoystickReading(void *args)
             if (holdCounter % 25 == 0)
             {
                 AudioMixer_decrementVolume();
-
-                printf("Joystick Direction: DOWN\n");
             }
             holdCounter++;
 
@@ -219,7 +205,6 @@ void *updateJoystickReading(void *args)
                 Beatbox_decrementBpm();
 
                 joystickReading = 4;
-                printf("Joystick Direction: LEFT\n");
 
                 sleep(0.75);
                 initialDelay = false;
@@ -227,8 +212,6 @@ void *updateJoystickReading(void *args)
             if (holdCounter % 20 == 0)
             {
                 Beatbox_decrementBpm();
-
-                printf("Joystick Direction: LEFT\n");
             }
             holdCounter++;
 
@@ -243,7 +226,6 @@ void *updateJoystickReading(void *args)
             {
                 Beatbox_incrementPattern();
                 joystickReading = 5;
-                printf("Joystick Direction: CLICK\n");
 
                 sleep(0.75);
                 initialDelay = false;
@@ -251,15 +233,11 @@ void *updateJoystickReading(void *args)
             if (holdCounter % 20 == 0)
             {
                 Beatbox_incrementPattern();
-
-                printf("Joystick Direction: CLICK\n");
             }
             holdCounter++;
 
             sleepForMs(5);
         }
-
-        // lastDirection = direction;
 
         // polling every 10ms for input
         sleepForMs(10);
