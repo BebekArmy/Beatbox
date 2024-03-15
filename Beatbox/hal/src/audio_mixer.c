@@ -2,13 +2,12 @@
 // which are left as incomplete.
 // Note: Generates low latency audio on BeagleBone Black; higher latency found on host.
 #include "hal/audio_mixer.h"
+#include "../../app/include/period_timer.h"
 #include <alsa/asoundlib.h>
 #include <stdbool.h>
 #include <pthread.h>
 #include <limits.h>
 #include <alloca.h> // needed for mixer
-
-//#include "period_timer" ?
 
 
 static snd_pcm_t *handle;
@@ -387,6 +386,8 @@ void* playbackThread(void* arg)
 			printf("Short write (expected %li, wrote %li)\n",
 					playbackBufferSize, frames);
 		}
+
+		Period_markEvent(PERIOD_EVENT_REFILL_AUDIO_PLAYBACK_BUFFER);
 	}
 
 	return NULL;
