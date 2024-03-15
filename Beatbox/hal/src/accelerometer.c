@@ -12,6 +12,8 @@
 #include <string.h>
 #include <pthread.h>
 #include <stdbool.h>
+#include <math.h>
+
 
 #define I2CDRV_LINUX_BUS1 "/dev/i2c-1"
 
@@ -98,39 +100,56 @@ int16_t readAccelerometerAxis(int i2cFileDesc, unsigned char regLSB, unsigned ch
     // Combine low and high bytes to get full 16-bit value
     int16_t axisValue = (buff[1] << 8) | buff[0];
 
-    return axisValue;
+    return axisValue / 16384;
 }
 
 void convertAccelerometerReadingToSound(int16_t x, int16_t y, int16_t z)
 {
-    // Define thresholds for each direction
-    int thresholdX = 50;
-    int thresholdY = 50;
-    int thresholdZ = 500;
+    // Define thresholds and debounce periods for each direction
+    int thresholdX = 0;
+    int thresholdY = 0;
+    int thresholdZ = 0;
+    time_t debouncePeriodX = 1; // in seconds
+    time_t debouncePeriodY = 1; // in seconds
+    time_t debouncePeriodZ = 1; // in seconds
 
-    // Check X-axis shake
-    if (x > thresholdX)
+    // Define last activation timestamps for each axis (static variables retain their values between function calls)
+    static time_t lastActivationX = 0;
+    static time_t lastActivationY = 0;
+    static time_t lastActivationZ = 0;
+
+    // Get current time
+    time_t currentTime = time(NULL);
+
+    // Check X-axis shake with debouncing
+    if (abs(x) > thresholdX && (currentTime - lastActivationX) > debouncePeriodX)
     {
         Beatbox_queueTestSound(0);
+        lastActivationX = currentTime; // Update last activation time
     }
 
-    // Check Y-axis shake
-    if (y > thresholdY)
+    // Check Y-axis shake with debouncing
+    if (abs(y) > thresholdY && (currentTime - lastActivationY) > debouncePeriodY)
     {
-        Beatbox_queueTestSound(1);
+        //Beatbox_queueTestSound(1);
+        lastActivationY = currentTime; // Update last activation time
     }
 
-    // Check Z-axis shake
-    if (z > thresholdZ)
+    // Check Z-axis shake with debouncing
+    if (abs(z - 1) > thresholdZ && (currentTime - lastActivationZ) > debouncePeriodZ)
     {
-        Beatbox_queueTestSound(2);
+        //Beatbox_queueTestSound(2);
+        lastActivationZ = currentTime; // Update last activation time
     }
 }
+
 
 void *updateAccelerometerReading(void *args)
 {
     (void)args;
     int i2cFileDesc = initI2cBus(I2CDRV_LINUX_BUS1, I2C_DEVICE_ADDRESS);
+    // Initialize last activation timestamps for each axis
+  
     while (!shutdown)
     {
         //Period_markEvent(PERIOD_EVENT_SAMPLE_ACCELEROMETER);
@@ -151,7 +170,7 @@ void *updateAccelerometerReading(void *args)
         //Beatbox_queueTestSound(0);
 
 
-        sleepForMs(1000); // should be 10ms but it will make the sound play super fast right now, problem
+        sleepForMs(10); // should be 10ms but it will make the sound play super fast right now, problem
     }
    
     close(i2cFileDesc);

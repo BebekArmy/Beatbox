@@ -18,6 +18,10 @@ void createThreads()
     AudioMixer_init();
     Beatbox_init();
     createUDPThread();
+
+    initializeAccelerometer();
+
+    createAccelerometerThread();
     
 }
 
@@ -26,6 +30,10 @@ void joinThreads()
     joinUDPThread();
     Beatbox_cleanup();
     AudioMixer_cleanup();
+
+    shutdownAccelerometer();
+    joinAccelerometerThread();
+
 }
 
 void waitShutdown()
