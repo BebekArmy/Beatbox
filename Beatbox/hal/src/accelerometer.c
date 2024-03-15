@@ -1,7 +1,7 @@
 #include "hal/accelerometer.h"
 #include "hal/general_command.h"
 #include "hal/beatbox.h"
-//#include "period_timer"
+#include "../../app/include/period_timer.h"
 
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -14,7 +14,6 @@
 #include <stdbool.h>
 #include <math.h>
 
-
 #define I2CDRV_LINUX_BUS1 "/dev/i2c-1"
 
 #define I2C_DEVICE_ADDRESS 0x18
@@ -26,7 +25,7 @@
 #define REG_Z_L 0x2C
 #define REG_Z_H 0x2D
 
-
+#define ACCELEROMETER_CONVERSION 6555
 
 static pthread_t accelerometerThread;
 
@@ -100,66 +99,52 @@ int16_t readAccelerometerAxis(int i2cFileDesc, unsigned char regLSB, unsigned ch
     // Combine low and high bytes to get full 16-bit value
     int16_t axisValue = (buff[1] << 8) | buff[0];
 
-    return axisValue / 16384;
+    return axisValue / ACCELEROMETER_CONVERSION;
 }
 
 void convertAccelerometerReadingToSound(int16_t x, int16_t y, int16_t z)
 {
-    // Define thresholds and debounce periods for each direction
+    // Define thresholds for each direction
     int thresholdX = 0;
     int thresholdY = 0;
-    int thresholdZ = 0;
-    time_t debouncePeriodX = 1; // in seconds
-    time_t debouncePeriodY = 1; // in seconds
-    time_t debouncePeriodZ = 1; // in seconds
+    int thresholdZ = 2;
 
-    // Define last activation timestamps for each axis (static variables retain their values between function calls)
-    static time_t lastActivationX = 0;
-    static time_t lastActivationY = 0;
-    static time_t lastActivationZ = 0;
+    bool doWait = false;
 
-    // Get current time
-    time_t currentTime = time(NULL);
-
-    // Check X-axis shake with debouncing
-    if (abs(x) > thresholdX && (currentTime - lastActivationX) > debouncePeriodX)
+    // Check X-axis shake
+    if (abs(x) > thresholdX)
     {
         Beatbox_queueTestSound(0);
-        lastActivationX = currentTime; // Update last activation time
+        doWait = true;
     }
 
-    // Check Y-axis shake with debouncing
-    if (abs(y) > thresholdY && (currentTime - lastActivationY) > debouncePeriodY)
+    // Check Y-axis shake
+    if (abs(y) > thresholdY)
     {
-        //Beatbox_queueTestSound(1);
-        lastActivationY = currentTime; // Update last activation time
+        Beatbox_queueTestSound(1);
+        doWait = true;
     }
 
-    // Check Z-axis shake with debouncing
-    if (abs(z - 1) > thresholdZ && (currentTime - lastActivationZ) > debouncePeriodZ)
+    // Check Z-axis shake
+    if (abs(z - 1) > thresholdZ)
     {
-        //Beatbox_queueTestSound(2);
-        lastActivationZ = currentTime; // Update last activation time
+        Beatbox_queueTestSound(2);
+        doWait = true;
+    }
+
+    if (doWait)
+    {
+        sleepForMs(220);
     }
 }
-
 
 void *updateAccelerometerReading(void *args)
 {
     (void)args;
     int i2cFileDesc = initI2cBus(I2CDRV_LINUX_BUS1, I2C_DEVICE_ADDRESS);
-    // Initialize last activation timestamps for each axis
-  
+
     while (!shutdown)
     {
-        //Period_markEvent(PERIOD_EVENT_SAMPLE_ACCELEROMETER);
-
-        // printf("x low: %d\n", readI2cReg(i2cFileDesc, REG_X_L));
-        // printf("x high: %d\n", readI2cReg(i2cFileDesc, REG_X_H));
-        // printf("y low: %d\n", readI2cReg(i2cFileDesc, REG_Y_L));
-        // printf("y high: %d\n", readI2cReg(i2cFileDesc, REG_Y_H));
-        // printf("z low: %d\n", readI2cReg(i2cFileDesc, REG_Z_L));
-        // printf("z high: %d\n", readI2cReg(i2cFileDesc, REG_Z_H));
 
         int16_t x = readAccelerometerAxis(i2cFileDesc, REG_X_L, REG_X_H);
         int16_t y = readAccelerometerAxis(i2cFileDesc, REG_Y_L, REG_Y_H);
@@ -167,12 +152,11 @@ void *updateAccelerometerReading(void *args)
 
         convertAccelerometerReadingToSound(x, y, z);
 
-        //Beatbox_queueTestSound(0);
+        sleepForMs(5);
 
-
-        sleepForMs(10); // should be 10ms but it will make the sound play super fast right now, problem
+        Period_markEvent(PERIOD_EVENT_SAMPLE_ACCELEROMETER);
     }
-   
+
     close(i2cFileDesc);
 
     return NULL;
