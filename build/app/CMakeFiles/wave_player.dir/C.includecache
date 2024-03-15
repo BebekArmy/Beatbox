@@ -1,0 +1,130 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include/period_timer.h
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include/print_result.h
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include/shutdown.h
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/include/udp.h
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/main.c
+hal/audio_mixer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/audio_mixer.h
+hal/general_command.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/general_command.h
+hal/beatbox.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/beatbox.h
+hal/gpio.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/gpio.h
+hal/joystick.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/joystick.h
+hal/accelerometer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/accelerometer.h
+shutdown.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.h
+stdio.h
+-
+stdlib.h
+-
+alsa/asoundlib.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/print_result.c
+hal/audio_mixer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/audio_mixer.h
+hal/general_command.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/general_command.h
+hal/beatbox.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/beatbox.h
+hal/gpio.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/gpio.h
+hal/joystick.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/joystick.h
+hal/accelerometer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/accelerometer.h
+period_timer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/period_timer.h
+pthread.h
+-
+string.h
+-
+stdio.h
+-
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/shutdown.c
+hal/beatbox.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/beatbox.h
+hal/audio_mixer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/audio_mixer.h
+hal/gpio.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/gpio.h
+hal/joystick.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/joystick.h
+hal/accelerometer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/hal/accelerometer.h
+udp.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/udp.h
+print_result.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/print_result.h
+period_timer.h
+/home/felix/cmpt433/work/Assignment 3/Beatbox/app/src/period_timer.h
+pthread.h
+-
+string.h
+-
+stdio.h
+-
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/accelerometer.h
+stdint.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/audio_mixer.h
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/beatbox.h
+stdint.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/general_command.h
+stdint.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+fcntl.h
+-
+string.h
+-
+time.h
+-
+stdbool.h
+-
+errno.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/gpio.h
+stdbool.h
+-
+
+/home/felix/cmpt433/work/Assignment 3/Beatbox/hal/include/hal/joystick.h
+

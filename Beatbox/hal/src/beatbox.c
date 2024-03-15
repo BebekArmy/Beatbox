@@ -104,6 +104,7 @@ static BeatPattern beatNumber2[] = {
     {NULL, NULL, 0.5}
 };
 
+// Manage Beat Patterns
 static PatternManager patternManager = {
     .patternNumber = 0,
     .pattern = beatNumber0,
@@ -158,11 +159,11 @@ void Beatbox_init() {
     AudioMixer_readWaveFileIntoMemory(DRUM_CH, &drumCh);
     AudioMixer_readWaveFileIntoMemory(DRUM_SNARE_HARD, &drumSnareHard);
     AudioMixer_readWaveFileIntoMemory(DRUM_SPLASH_HARD, &drumSplashHard);
-    //AudioMixer_readWaveFileIntoMemory(RICK_ROLL, &rickRoll);
-    //AudioMixer_queueSound(&rickRoll);
 
     pthread_create(&beatboxThread, NULL, Beatbox_startThread, NULL);
 }
+
+
 
 void Beatbox_changePattern(int patternNumber) {
     switch (patternNumber) {
@@ -232,7 +233,6 @@ void Beatbox_cleanup() {
     AudioMixer_freeWaveFileData(&drumCc);
     AudioMixer_freeWaveFileData(&drumCh);
     AudioMixer_freeWaveFileData(&drumSnareHard);
-    //AudioMixer_freeWaveFileData(&rickRoll);
     AudioMixer_freeWaveFileData(&drumSplashHard);
 
     

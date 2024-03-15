@@ -25,29 +25,6 @@ int main(void)
     createThreads();
 
     waitShutdown();
-
-    // while(1)
-    // {
-    //     int input;
-    //     printf("Enter 0 for beat 0, 1 for beat 1, 2 for beat 2, 3 to exit\n");
-    //     scanf("%d", &input);
-    //     if(input == 0)
-    //     {
-    //         Beatbox_changePattern(0);
-    //     }
-    //     else if(input == 1)
-    //     {
-    //         Beatbox_changePattern(1);
-    //     }
-    //     else if(input == 2)
-    //     {
-    //         Beatbox_changePattern(2);
-    //     }
-    //     else if(input == 3)
-    //     {
-    //         break;
-    //     }
-    // }
     
     joinThreads();
     

@@ -324,7 +324,6 @@ static void fillPlaybackBuffer(short *buff, int size)
 
 	pthread_mutex_lock(&audioMutex);
 
-	//Period_markEvent(PERIOD_EVENT_REFILL_AUDIO_PLAYBACK_BUFFER);
 
 	{
 		for (int i = 0; i < MAX_SOUND_BITES; i++) {
