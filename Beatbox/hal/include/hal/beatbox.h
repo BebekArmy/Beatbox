@@ -6,7 +6,7 @@
 #define BEATBOX_MAX_BPM 300
 #define BEATBOX_MIN_BPM 40
 
-//Module to manage the beatbox application
+// Module to manage the beatbox application
 
 void Beatbox_queueTestSound(int index);
 void Beatbox_changeBpm(int newBpm);

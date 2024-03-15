@@ -3,7 +3,7 @@
 
 /* Module to initialize and cleanup the udp thread.
 The udp thread handles listening for commands over udp.
-It has the "stop" command to exit the program gracefully.
+It has the "terminate program" command in the web interface to exit the program gracefully.
 */
 
 #include <stdbool.h>
